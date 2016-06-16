@@ -1,0 +1,77 @@
+/* CSS Document */
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;font-family:"微软雅黑";}
+div{overflow:hidden;}
+a{cursor:pointer;text-decoration:none;outline:none;}
+img{border:0;}
+
+/* soft_function */
+.soft_function{width:1200px;margin:0 0 0 20px;}
+.soft_con_icon{width:1200px;display:block;padding-top:10px}
+.soft_con_icon ul li{float:left;display:block;list-style:none;margin:0 60px;}
+.soft_con_icon ul li a p{color:#333333;font-size:20px;font-family:"微软雅黑";text-align:center}
+.soft_con{height:210px;width:1000px}
+.soft_con1{height:20px;width:1000px;background:url(/static/images/line_select_001.gif)}
+.soft_con2{height:198px;width:998px;border-bottom:1px solid #d4d4d4;border-left:1px solid #d4d4d4;border-right:1px solid #d4d4d4;background:#fcfcfc}
+.soft_con2 div{float:left;margin:8px 0px;}
+.function1{height:200px;width:249px;border:1px solid #d4d4d4;cursor: pointer;}
+.function2{height:160px;width:248px;cursor: pointer;}
+.soft_con2 div img{margin:20px 50px 0px 49px}
+.soft_con2 div p{text-align:center}
+.p1{font-size:20px;color:#555555;font-family:"微软雅黑";line-height:45px}
+.p2{font-size:14px;color:#c0c0c0;font-family:"微软雅黑";width:208px;height:50px;line-height:24px;margin:auto;overflow: hidden;}
+
+.row{
+    float: left;
+    width: 30%;
+    padding: 0px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+
+.list-inline li {
+    height: 30px;
+    vertical-align: middle;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.input-sm, .form-group-sm .form-control {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.divDown {
+    float: left;
+    margin-left: 26%;
+    margin-top: 23px;
+}
+
+.divDown a{
+    /*font-family: Georgia, "Times New Roman", Times, serif;*/
+    font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    color: #42A5DC;
+    text-decoration: none;
+}
+
+.divDown a a:visited{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: red;
+    text-decoration: dotted;
+}
+
+#down_img{
+    padding-top: 1px;
+    margin-left: 10px;
+}

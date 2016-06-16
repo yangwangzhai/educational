@@ -1,0 +1,370 @@
+.lefttop{
+    text-align:center;
+    margin: 10px auto;
+    width: 177px;
+    height: 30px;
+    background-color: #D9534F;
+}
+.test_right{
+    border: 1px solid #E8E8E8;
+    float: left;
+    border-right:0px;
+    border-bottom:0px;
+    width: 80%;
+}
+
+.choiceSearch {
+    width: 100%;
+    float: left;
+    margin: 0px 0px 10px -10px;
+    border:none;
+}
+.choiceSearch dl, .choiceSearch dd, .choiceSearch dt {
+    display: block;
+    float: left;
+}
+.findchoice {
+    width: 80%;
+    float: left;
+    background-color: #ddf1fe;
+    border-bottom: 1px solid #e8e8e8;
+}
+.findchoice dl {
+    width: 998px;
+}
+.findchoice dt {
+    width: 106px;
+    line-height: 38px;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 20px;
+}
+.findchoice dd {
+    width: 868px;
+    padding-bottom: 8px;
+}
+.findchoice dd a {
+    display: block;
+    float: left;
+    height: 22px;
+    color: #333;
+    background-color: #feecef;
+    font-family: "SimSun";
+    padding: 0px 18px 0px 6px;
+    line-height: 22px;
+    margin: 8px 10px 0px 0px;
+    background-position: right -343px;
+    border: 1px solid #f43c5e;
+    cursor: pointer;
+}
+.findchoice dd a strong {
+    font-weight: normal;
+    font-family: "SimSun";
+    color: #f43c5e;
+    line-height: 22px;
+}
+.findchoice dd a:hover {
+    text-decoration: none;
+}
+.choice .choiceItem{
+    width: 100%;
+    float: left;
+    padding-top: 10px;
+}
+
+.choice dl {
+    width: 100%;
+    float: left;
+    padding-bottom: 10px;
+    margin: 0px 22px;
+    border-bottom: 1px dashed #e8e8e8;
+}
+.choice dt {
+    width: 84px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #e8e8e8;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+.choice dd {
+    width: 85%;
+}
+.choiceItem a {
+    display: block;
+    float: left;
+    color: #1887e3;
+    font-size: 13px;
+}
+.choiceItem1 .searchInput {
+    width: 260px;
+    padding: 6px 0 6px 10px;
+    display: block;
+    float: left;
+    outline: none;
+    font-size: 14px;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+    background-color: transparent;
+}
+.choiceItem1 .input8f8 {
+    color: #8f8f8f;
+}
+.choiceItem1 .searchBtn {
+    width: 68px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    border: 0px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    padding-bottom: 6px;
+    padding-top: 6px;
+
+    background-color: #f43c5e;
+    border: 1px solid #da2c4d;
+}
+@-moz-document url-prefix(){.choiceItem1 .searchBtn{padding-bottom: 5px;
+    padding-top: 5px;}}
+.choiceItem1 .searchBtn:hover {
+    border: 1px solid #ea3257;
+    background-color: #fa446b;
+}
+.choiceItem1 p {
+    line-height: 30px;
+    float: left;
+    margin-left: 10px;
+    font-family: "SimSun";
+}
+.choiceItem1 p span {
+    color: #f43c5e;
+    font-family: "SimSun";
+}
+.choiceItem2 .height58 {
+    height: 48px;
+    overflow: hidden;
+}
+.choiceItem2 dd {
+    padding: 5px 0px;
+    line-height: 24px;
+}
+.choiceItem2 .attr-selectBox .txt {
+    padding-left: 10px;
+}
+.choiceItem2 .knowledge1 .txt {
+    width: 780px;
+    float: left;
+}
+.choiceItem2 .knowledge2, .choiceItem2 .knowledge3 {
+    margin: 8px 0px 0px 102px;
+    border: 1px solid #f43c5e;
+}
+.choiceItem2 .knowledge2 .txt, .choiceItem2 .knowledge3 .txt {
+    width: 700px;
+    float: left;
+}
+.choiceItem2 .knowledge2 h4, .choiceItem2 .knowledge3 h4 {
+    width: 70px;
+    float: left;
+    padding-right: 10px;
+    text-align: right;
+    font-family: "SimSun";
+}
+.choiceItem2 dd .txt div {
+    padding-left: 300px;
+    display: none;
+}
+.choiceItem2 dd .txt div input {
+    cursor: pointer;
+}
+.choiceItem2 dd .txt a {
+    line-height: 24px;
+}
+.choiceItem2 dd .txt a:hover, .toolPage .toolselect a:hover, .studentBox a:hover {
+    text-decoration: none;
+}
+.choiceItem2 dd .txt .attr-select, .studentBox a {
+    padding-left: 20px;
+    background-position: 1px -703px;
+}
+.toolPage .toolselect a {
+    padding-left: 20px;
+    margin-top: 1px;
+    background-position: 1px -702px;
+}
+.choiceItem2 dd .txt .selected, .toolPage .toolselect .selected, .studentBox .selected {
+    background-position: 1px -736px;
+}
+.toolPage .toolselect .selected {
+    background-position: 1px -735px;
+}
+.choiceItem2 dd .choicebtn, .choiceItem3 dd .choicebtn {
+    width: 55px;
+    float: right;
+}
+.choiceItem3 .txt {
+    width: 795px;
+    float: left;
+}
+.choiceItem3 a {
+    line-height: 24px;
+    padding: 0px 15px;
+    /*margin: 4px 10px 4px 0px;*/
+    margin: 4px 0px 4px 0px;
+}
+.choiceItem3 dd .choicebtn a {
+    padding: 1px 0px 0px 20px;
+    margin: 3px 0px 0px 0px;
+}
+.choiceItem3 .height34 {
+    height: 34px;
+    overflow: hidden;
+}
+.choiceItem2 dd .choicebtn a, .choiceItem3 dd .choicebtn a {
+    display: block;
+    float: left;
+    color: #333;
+    padding-left: 20px;
+}
+.choiceItem2 dd .choicebtn a:hover, .choiceItem3 dd .choicebtn a:hover {
+    color: #F43C5E;
+}
+.choiceItem2 dd .choicebtn .unfold, .choiceItem3 dd .choicebtn .unfold {
+    background-position: -982px 3px;
+}
+.choiceItem2 dd .choicebtn .fold, .choiceItem3 dd .choicebtn .fold {
+    display: none;
+    background-position: -982px -43px;
+}
+.choiceItem2 dd .choicebtn .more {
+    background-position: -982px -22px;
+}
+.choiceItem2 dd .choicebtn .cancel {
+    display: none;
+    background-position: -982px -68px;
+}
+.choiceItem2 .txt a {
+    line-height: 24px;
+    padding: 0px 15px;
+    margin: 1px;
+}
+.choiceItem2 a:hover, .choiceItem3 a:hover {
+    color: #f43c5e;
+    text-decoration: none;
+}
+.choiceItem2 .this, .choiceItem3 .this{
+    color: #fff;
+    background-color: #f43c5e;
+}
+.choiceItem2 .diff, .choiceItem3 .diff{
+    color: #fff;
+    background-color: #f43c5e;
+}
+.choiceItem2 .this:hover, .choiceItem3 .this:hover {
+    color: #fff;
+}
+.choiceItem2 .diff:hover, .choiceItem3 .diff:hover {
+    color: #fff;
+}
+.attr-selectBox {
+    background-color: #feecef;
+}
+.attr-selectBox .txt a, .choiceItem2 .attr-selectBox .txt this {
+    color: #333;
+}
+.attr-selectBox .txt a:hover, .choiceItem2 .attr-selectBox .txt this:hover {
+    text-decoration: none;
+    color: #333;
+}
+.choiceItem3 .area {
+    width: 840px;
+    padding: 5px;
+    margin: 8px 0 0 102px;
+    border: 1px solid #F43C5E;
+}
+.detailsBox{
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    min-height: 120px;
+    width: 100%;
+    line-height: 36px;
+    border: 1px solid #e8e8e8;
+}
+.mb {
+    margin-bottom: 10px;
+}
+.detailsTxt {
+    width: 100%;
+    float: left;
+}
+.detailsTxt .col333 a {
+    color: #333;
+    font-family: "SimSun";
+}
+.detailsTxt .col333 a:hover {
+    color: #F43C5E;
+}
+.quesdiv {
+    cursor: default;
+    background: #fff;
+    padding: 0px 20px;
+    position: relative;
+    height: auto;/*很重要*/
+    line-height: 2em;
+}
+.handle{
+    width: 100%;
+    height: 55px;
+    background-color: silver;
+}
+.handle ul{
+    display: block;
+    float: left;
+    margin-top: 11px;
+    padding: 0;
+}
+.handle li{
+    display: block;
+    float: left;
+    list-style: none;
+    padding-left: 10px;
+}
+.handle a{
+    background: #1887e3;
+    padding-left: 0;
+    text-align: center;
+    width: 80px;
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+    display: block;
+    line-height: 32px;
+    font-size: 14px;
+}
+.handle a:hover{
+    text-decoration: none;
+    background-color: #f43c5e;
+    color: #fff;
+}
+.handle div{
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.handle div u{
+    display: block;
+    float: left;
+    font-family: "微软雅黑";
+    margin-left: 10px;
+    text-decoration: none;
+    font-size:14px;
+    height:18px;
+    line-height:18px;
+}
+.handle div u i{
+    color: #f43c5e;
+    font-family: "SimSun";
+}

@@ -1,0 +1,42 @@
+.test_paper{
+    float: left;
+    width: 1000px;
+    height:1000px;
+    border-right: solid #03A678;
+}
+.title{
+    float: right;
+    position: fixed;
+    left: 1050px;
+    width: 100px;
+    height: 30px;
+    margin-top: 100px;
+    margin-right: 10px;
+    /*border: solid thin #03A678;*/
+}
+.score{
+    float: right;
+    position: fixed;
+    left: 1050px;
+    top: 150px;
+    width: 100px;
+    height: 30px;
+    margin-top: 50px;
+    margin-right: 10px;
+    /*border: solid thin #03A678;*/
+}
+.score input{
+    width: 40px;
+}
+
+.save{
+    float: right;
+    position: fixed;
+    left: 1050px;
+    top: 250px;
+    width: 100px;
+    height: 30px;
+    margin-top: 50px;
+    margin-right: 10px;
+    /*border: solid thin #03A678;*/
+}

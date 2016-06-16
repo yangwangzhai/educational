@@ -1,0 +1,63 @@
+input[type=submit],
+input[type=reset],
+input[type=button]{
+filter:chroma(color=#000000);
+-webkit-appearance: none;
+border-radius: 0;
+}
+input[type=text]{
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+.left{ border: 1px solid #E8E8E8;
+    float: left;
+    line-height: 20px; 
+    overflow: hidden;
+	width:190px;
+	border-right:0px;
+    height: auto;
+	background-color: #fff;
+   }
+
+#input1{ background: url("../../images/ytkgb/duoxuanbutton.jpg") no-repeat ;
+	border: 0 none;
+    height: 41px;
+    width: 177px;
+	cursor: pointer;
+	color: #fff;
+	padding-left: 25px;
+	font-size: 14px;
+}
+#input2{background: url("../../images/ytkgb/danxuanbutton.jpg") no-repeat ;
+	border: 0 none;
+	height: 41px;
+	width: 177px;
+	cursor: pointer;
+    position: relative;
+    color: #fff;
+	padding-left: 25px;
+	font-size: 14px;    
+	display:none;
+}
+.leftbottom2{
+	margin-left: 10px;
+	overflow:auto;
+	height:auto;
+	}
+.tongbuposition .left{top:0px; position:fixed;z-index: 5;}
+.leftbottom2{overflow:auto;}
+ul{list-style:none;} 
+#root{width:177px;} 
+#root li{line-height:25px;white-space:nowrap;} 
+#root .rem{padding-left:14px;} 
+#root .add{ background:url("../../images/questionBank/questionBank.png") no-repeat scroll -9px -1703px ;
+    height: 17px;
+    width: 14px;} 
+#root .ren{background:url("../../images/questionBank/questionBank.png") no-repeat scroll -9px -1720px ;height: 17px;
+    width: 14px;} 
+#root li a{color:#333333;padding-left:0px;outline:none;blr:expression(this.onFocus=this.blur());font-size: 14px;display: inline-block;height: 27px;} 
+#root li input{vertical-align:middle;margin-left:0px;display:none;margin-top:-1px;margin-right:5px;} 
+#root .two{padding-left:18px;display:block;}	
+
+
+
