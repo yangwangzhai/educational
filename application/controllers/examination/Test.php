@@ -229,7 +229,9 @@ class Test extends Content
         show_msg ( '添加成功！', $_SESSION ['url_forward'] );
     }
 
-
+    public function git(){
+        $str="learn git";
+    }
 
 
 
