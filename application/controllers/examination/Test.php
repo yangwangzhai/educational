@@ -31,7 +31,10 @@ class Test extends Content
         //获取所有科目
         $query=$this->db->get("fly_subject");
         $data['subject'] = $query->result_array();
-        $data['subject_select']=$this->input->post("subjectid")?$this->input->post("subjectid"):1;
+        $data['subject_select']=$this->input->get("subjectid");
+        if(empty($data['subject_select'])){
+            $data['subject_select']=$this->input->post("subjectid")?$this->input->post("subjectid"):1;
+        }
         //取出当前选中的科目
         $res=$this->Question_model->get_column2("subject","fly_subject","id=$data[subject_select]");
         $data['subject_name']=$res['subject'];
@@ -71,7 +74,7 @@ class Test extends Content
         $data['difficulty_degree'] = $query->result_array();
 
         //接收 筛选的知识点id
-        $knowledge_pointid=$this->input->get("knowledge_point_id");
+        $data['knowledge_point_id']=$knowledge_pointid=$this->input->get("knowledge_point_id")?$this->input->get("knowledge_point_id"):'';
         $knowledge_pointid_str=$knowledge_pointid.",";
         if(!empty($knowledge_pointid)){
             $select_one=$this->Question_model->get_column("id","fly_knowledge_point","subjectid=$data[subject_select] AND p_id=$knowledge_pointid");
@@ -116,10 +119,10 @@ class Test extends Content
         }
         $knowledge_pointid_str = substr($knowledge_pointid_str,0,strlen($knowledge_pointid_str)-1);
         //接收 筛选的题型id
-        $data['question_typeid']=$question_typeid=$this->input->get("question_type_id");
+        $data['question_typeid']=$question_typeid=$this->input->get("question_typeid");
 
         //接收 筛选的难度系数id
-        $data['difficultyDegreeid']=$difficultyDegreeid=$this->input->get("difficulty_degree_id");
+        $data['difficultyDegreeid']=$difficultyDegreeid=$this->input->get("difficultyDegreeid");
 
         //根据科目获取对应的试题
         $where="subjectid=$data[subject_select]";
@@ -134,6 +137,16 @@ class Test extends Content
         }
 
         $data['question']=$this->Question_model->get_column("*","fly_question",$where);
+        //根据子节点获取所有父节点
+        if(!empty($knowledge_pointid)){
+            $p_id=$this->Question_model->get_column2("p_id","fly_knowledge_point","id=$knowledge_pointid");
+            $parent_node_arr = $this->Question_model->list_cate2($data['subject_select'],$p_id['p_id']);
+            $num=count($parent_node_arr)-1;
+            for($num;$num>=0;$num--){
+                $parent_node[]=$parent_node_arr[$num]['id'];
+            }
+        }
+        $data['parent_node']=$parent_node;
 
         $this->load->view("examination/".$this->list_view,$data);
     }
@@ -229,9 +242,7 @@ class Test extends Content
         show_msg ( '添加成功！', $_SESSION ['url_forward'] );
     }
 
-    public function git(){
-        $str="learn git";
-    }
+
 
 
 

@@ -54,7 +54,26 @@ class Question_model extends content_model
         return $tree;
     }
 
+    //根据子孙节点，查找所有父节点
+    public function list_cate2($subjectid,$p_id){
+        #获取所有的记录
+        $cates = $this->Question_model->get_column("*","fly_knowledge_point","subjectid=$subjectid");
+        #对类别进行重组，并返回
+        return $this->parent_tree($cates,$p_id);
+    }
 
+    public function parent_tree($arr,$p_id){
+        static $list=array();
+        foreach($arr as $u){
+            if($u['id']== $p_id){
+                $list[]=$u;
+                if($u['p_id']>0){
+                    $this->parent_tree($arr,$u['p_id']);
+                }
+            }
+        }
+        return $list;
+    }
 
 
 
