@@ -44,7 +44,7 @@ class Question_model extends content_model
         static $tree = array(); #用于保存重组的结果,注意使用静态变量
         foreach ($arr as $v) {
             if ($v['p_id'] == $p_id){
-                //说明找到了以$pid为父节点的子节点,将其保存
+                //说明找到了以$p_id为父节点的子节点,将其保存
                 $v['level'] = $level;
                 $tree[] = $v;
                 //然后以当前节点为父节点，继续找其后代节点
@@ -74,6 +74,32 @@ class Question_model extends content_model
         }
         return $list;
     }
+
+    public function list_cate3($subjectid,$p_id = 0){
+        #获取所有的记录
+        $cates = $this->Question_model->get_column("*","fly_knowledge_point","subjectid=$subjectid");
+        #对类别进行重组，并返回
+        return $this->ch_tree($cates,$p_id);
+    }
+
+    public function ch_tree($arr,$p_id = 0,$level=0,$ch=''){
+        static $tree = array(); #用于保存重组的结果,注意使用静态变量
+        foreach ($arr as $v) {
+            if ($v['p_id'] == $p_id){
+                //说明找到了以$p_id为父节点的子节点,将其保存
+                $v['level'] = $level;
+                $ch .=$p_id.',';
+                $v['ch'] = $ch;
+                $v['ch'] = substr($v['ch'],0,strlen($v['ch'])-1);
+                $tree[] = $v;
+                //然后以当前节点为父节点，继续找其后代节点
+                $this->ch_tree($arr,$v['id'],$level + 1,$ch);
+            }
+        }
+        return $tree;
+    }
+
+
 
 
 

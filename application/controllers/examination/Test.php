@@ -180,7 +180,17 @@ class Test extends Content
         //取出当前选中的科目
         $res=$this->Question_model->get_column2("subject","fly_subject","id=$data[subject_select]");
         $data['subject_name']=$res['subject'];
-        $data['list']=$this->Question_model->list_cate($data['subject_select']);
+        $list=$temp=$this->Question_model->list_cate($data['subject_select']);
+        foreach($list as &$l){
+            $child=$l['id'].',';
+            foreach($temp as $t){
+                if($l['id']==$t['p_id']){
+                    $child .=$t['id'].',';
+                }
+            }
+            $l['child_node']=$child;
+        }
+        $data['list']=$list;
 
         $this->load->view("examination/knowledge_list",$data);
     }

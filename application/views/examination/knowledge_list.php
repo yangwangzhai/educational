@@ -67,7 +67,7 @@
                                                     <img src="static/examination/knowledege/images/menu_minus.gif">
                                                     <?=$value['knowledge_point']?>
                                                 </td>
-                                                <td><?=$value['subjectid']?></td>
+                                                <td><?=$subject_name?></td>
                                                 <td><?=$value['subjectid']?></td>
                                                 <td>
                                                     <a href="<?=$this->baseurl?>&m=knowledge_edit&id=<?=$value['id']?>&subject_select=<?=$subject_select?>&p_id=<?=$value['p_id']?>&knowledge_point=<?=$value['knowledge_point']?>" class="font-red" title="">编辑</a>
