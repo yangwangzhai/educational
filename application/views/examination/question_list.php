@@ -32,22 +32,29 @@
                 var knowledge_pointid=$(this).attr("data-id");
                 var question_typeid=$(".this").attr("questionType");
                 var difficultyDegreeid=$(".diff").attr("difficultyDegree");
-                alert(knowledge_pointid);
-                alert(question_typeid);
-                alert(difficultyDegreeid);
-                location.href="index.php?d=examination&c=Test&m=index&knowledge_point_id="+knowledge_pointid+"&question_type_id="+question_typeid+"&difficulty_degree_id="+difficultyDegreeid;
+                var subjectid=$("#subject").val();
+
+                location.href="index.php?d=examination&c=Test&m=index&knowledge_point_id="+knowledge_pointid+"&question_typeid="+question_typeid+"&difficultyDegreeid="+difficultyDegreeid+"&subjectid="+subjectid;
             })
             $(".question_type").on("click",function(){
                 $(".question_type").removeClass("this");
                 $(this).addClass("this");
                 var question_typeid=$(this).attr("questionType");
-                //location.href="index.php?d=examination&c=Test&m=index&knowledge_pointid="+knowledge_pointid+"&question_typeid"+question_typeid+"&difficultyDegreeid"+difficultyDegreeid;
+                var knowledge_pointid=$(".select_knowledge").attr("data-id");
+                var difficultyDegreeid=$(".diff").attr("difficultyDegree");
+                var subjectid=$("#subject").val();
+
+                location.href="index.php?d=examination&c=Test&m=index&knowledge_point_id="+knowledge_pointid+"&question_typeid="+question_typeid+"&difficultyDegreeid="+difficultyDegreeid+"&subjectid="+subjectid;
             })
             $(".difficultyDegree").on("click",function(){
                 $(".difficultyDegree").removeClass("diff");
                 $(this).addClass("diff");
+                var question_typeid=$(".this").attr("questionType");
+                var knowledge_pointid=$(".select_knowledge").attr("data-id");
                 var difficultyDegreeid=$(this).attr("difficultyDegree");
-                //location.href="index.php?d=examination&c=Test&m=index&knowledge_pointid="+knowledge_pointid+"&question_typeid"+question_typeid+"&difficultyDegreeid"+difficultyDegreeid;
+                var subjectid=$("#subject").val();
+
+                location.href="index.php?d=examination&c=Test&m=index&knowledge_point_id="+knowledge_pointid+"&question_typeid="+question_typeid+"&difficultyDegreeid="+difficultyDegreeid+"&subjectid="+subjectid;
             })
         });
     </script>
@@ -98,73 +105,79 @@
                                                 <h3><span class="label label-danger"><?=$subject_name?>知识点</span></h3>
                                             </div>
                                             <div>
-                                                    <div class="leftbottom2" style="display: block;">
-                                                        <?php if(!empty($one)){?>
-                                                        <ul id="root">
-                                                            <?php foreach($one as $one_key=>$one_value){?>
-                                                            <li>
-                                                                <span class="add" style="vertical-align: middle;display: inline-block; cursor: pointer;"></span>
-                                                                <label bgid="8462">
-                                                                    <input type="checkbox" value="8462"><a href="javascript:void(0)" class="knowledge" data-id="<?=$one_value['id']?>" title="现代文阅读"><?=$one_value['knowledge_point']?></a>
-                                                                </label>
-                                                                <?php if(!empty($two[$one_value['id']])){?>
-                                                                <ul class=" two " style="display:none">
-                                                                    <?php foreach($two[$one_value['id']] as $two_key=>$two_value){?>
-                                                                    <li>
-                                                                        <span class="<?php if(!empty($three[$two_value['id']])){echo "add";}else{echo "dis_none";}?>" style="vertical-align: middle; display: inline-block; cursor: pointer;"></span>
-                                                                        <label bgid="8463">
-                                                                            <input type="checkbox" value="8463"><a href="javascript:void(0)" class="knowledge" data-id="<?=$two_value['id']?>" title="说明文阅读"><?=$two_value['knowledge_point']?></a>
-                                                                        </label>
-                                                                        <?php if(!empty($three[$two_value['id']])){?>
-                                                                        <ul class="two" style="display:none">
-                                                                            <?php foreach($three[$two_value['id']] as $three_key=>$three_value){?>
-                                                                            <li>
-                                                                                <span class="<?php if(!empty($four[$three_value['id']])){echo "add";}else{echo "dis_none";}?>" style="vertical-align: middle; display: inline-block; cursor: pointer;"></span>
-                                                                                <label bgid="8464">
-                                                                                    <input type="checkbox" value="8464">
-                                                                                    <a href="javascript:void(0)" class="knowledge" data-id="<?=$three_value['id']?>" title="提炼、概括信息"><?=$three_value['knowledge_point']?></a>
-                                                                                </label>
-                                                                                <?php if(!empty($four[$three_value['id']])){?>
-                                                                                <ul class="two" style="display:none">
-                                                                                    <?php foreach($four[$three_value['id']] as $four_key=>$four_value){?>
-                                                                                    <li>
-                                                                                        <span class="<?php if(!empty($five[$four_value['id']])){echo "add";}else{echo "dis_none";}?>" style="vertical-align: middle; display: inline-block; cursor: pointer;"></span>
-                                                                                        <label bgid="14268">
-                                                                                            <input type="checkbox" value="14268"><a href="javascript:void(0)" class="knowledge" data-id="<?=$four_value['id']?>" title="段的作用"><?=$four_value['knowledge_point']?></a>
-                                                                                        </label>
-                                                                                        <?php if(!empty($five[$four_value['id']])){?>
-                                                                                        <ul class="two" style="display:none">
-                                                                                            <?php foreach($five[$four_value['id']] as $five_key=>$five_value){?>
-                                                                                            <li>
-                                                                                                <span class="dis_none" style="vertical-align: middle; display: inline-block; cursor: pointer;"></span>
-                                                                                                <label bgid="15268">
-                                                                                                    <input type="checkbox" value="15268"><a href="javascript:void(0)" class="knowledge" data-id="<?=$five_value['id']?>" title=""><?=$five_value['knowledge_point']?></a>
-                                                                                                </label>
-                                                                                            </li>
-                                                                                            <?php }?>
-                                                                                        </ul>
+                                                <input type="hidden" class="<?php if(empty($knowledge_point_id)){echo "select_knowledge";}?>" data-id="">
+                                                <div class="leftbottom2" style="display: block;">
+                                                    <?php if(!empty($one)){?>
+                                                    <ul id="root">
+                                                        <?php foreach($one as $one_key=>$one_value){?>
+                                                        <li>
+                                                            <span class="<?php if($one_value['id']==$parent_node[0]){echo "ren";}else{echo "add";}?>" style="vertical-align: middle;display: inline-block; cursor: pointer;"></span>
+                                                            <label bgid="8462">
+                                                                <input type="checkbox" value="8462">
+                                                                <a href="javascript:void(0)" class="knowledge <?php if($knowledge_point_id==$one_value['id']){echo "select_knowledge";}?>" data-id="<?=$one_value['id']?>" style="<?php if($knowledge_point_id==$one_value['id']){echo "color:rgb(244, 60, 94)";}?>"><?=$one_value['knowledge_point']?></a>
+                                                            </label>
+                                                            <?php if(!empty($two[$one_value['id']])){?>
+                                                            <ul class=" two " style="<?php if($one_value['id']==$parent_node[0]){echo "display:block";}else{echo "display:none";}?>">
+                                                                <?php foreach($two[$one_value['id']] as $two_key=>$two_value){?>
+                                                                <li>
+                                                                    <span class="<?php if(!empty($three[$two_value['id']])&&($two_value['id']==$parent_node[1])){echo "ren";}else{if(!empty($three[$two_value['id']])&&($two_value['id']!=$parent_node[1])){echo "add";}else{echo "dis_none";}}?>" style="vertical-align: middle; display: inline-block; cursor: pointer;"></span>
+                                                                    <label bgid="8463">
+                                                                        <input type="checkbox" value="8463">
+                                                                        <a href="javascript:void(0)" class="knowledge <?php if($knowledge_point_id==$two_value['id']){echo "select_knowledge";}?>" data-id="<?=$two_value['id']?>" style="<?php if($knowledge_point_id==$two_value['id']){echo "color:rgb(244, 60, 94)";}?>"><?=$two_value['knowledge_point']?></a>
+                                                                    </label>
+                                                                    <?php if(!empty($three[$two_value['id']])){?>
+                                                                    <ul class="two" style="<?php if($two_value['id']==$parent_node[1]){echo "display:block";}else{echo "display:none";}?>">
+                                                                        <?php foreach($three[$two_value['id']] as $three_key=>$three_value){?>
+                                                                        <li>
+                                                                            <span class="<?php if(!empty($four[$three_value['id']])&&($three_value['id']==$parent_node[2])){echo "ren";}else{if(!empty($four[$three_value['id']])&&($three_value['id']!=$parent_node[2])){echo "add";}else{echo "dis_none";}}?>
+                                                                            " style="vertical-align: middle; display: inline-block; cursor: pointer;"></span>
+                                                                            <label bgid="8464">
+                                                                                <input type="checkbox" value="8464">
+                                                                                <a href="javascript:void(0)" class="knowledge <?php if($knowledge_point_id==$three_value['id']){echo "select_knowledge";}?>" data-id="<?=$three_value['id']?>" style="<?php if($knowledge_point_id==$three_value['id']){echo "color:rgb(244, 60, 94)";}?>"><?=$three_value['knowledge_point']?></a>
+                                                                            </label>
+                                                                            <?php if(!empty($four[$three_value['id']])){?>
+                                                                            <ul class="two" style="<?php if($three_value['id']==$parent_node[2]){echo "display:block";}else{echo "display:none";}?>">
+                                                                                <?php foreach($four[$three_value['id']] as $four_key=>$four_value){?>
+                                                                                <li>
+                                                                                    <span class="<?php if(!empty($five[$four_value['id']])&&($four_value['id']==$parent_node[3])){echo "ren";}else{if(!empty($five[$four_value['id']])&&($four_value['id']!=$parent_node[3])){echo "add";}else{echo "dis_none";}}?>
+                                                                                    " style="vertical-align: middle; display: inline-block; cursor: pointer;"></span>
+                                                                                    <label bgid="14268">
+                                                                                        <input type="checkbox" value="14268">
+                                                                                        <a href="javascript:void(0)" class="knowledge <?php if($knowledge_point_id==$four_value['id']){echo "select_knowledge";}?>" data-id="<?=$four_value['id']?>" style="<?php if($knowledge_point_id==$four_value['id']){echo "color:rgb(244, 60, 94)";}?>"><?=$four_value['knowledge_point']?></a>
+                                                                                    </label>
+                                                                                    <?php if(!empty($five[$four_value['id']])){?>
+                                                                                    <ul class="two" style="<?php if($four_value['id']==$parent_node[3]){echo "display:block";}else{echo "display:none";}?>">
+                                                                                        <?php foreach($five[$four_value['id']] as $five_key=>$five_value){?>
+                                                                                        <li>
+                                                                                            <span class="dis_none" style="vertical-align: middle; display: inline-block; cursor: pointer;"></span>
+                                                                                            <label bgid="15268">
+                                                                                                <input type="checkbox" value="15268">
+                                                                                                <a href="javascript:void(0)" class="knowledge <?php if($knowledge_point_id==$five_value['id']){echo "select_knowledge";}?>" data-id="<?=$five_value['id']?>" style="<?php if($knowledge_point_id==$five_value['id']){echo "color:rgb(244, 60, 94)";}?>"><?=$five_value['knowledge_point']?></a>
+                                                                                            </label>
+                                                                                        </li>
                                                                                         <?php }?>
-                                                                                    </li>
+                                                                                    </ul>
                                                                                     <?php }?>
-                                                                                </ul>
-                                                                            <?php }?>
-                                                                            </li>
+                                                                                </li>
+                                                                                <?php }?>
+                                                                            </ul>
                                                                         <?php }?>
-                                                                        </ul>
+                                                                        </li>
                                                                     <?php }?>
-                                                                    </li>
+                                                                    </ul>
                                                                 <?php }?>
-                                                                </ul>
-                                                                <?php }?>
-                                                            </li>
+                                                                </li>
                                                             <?php }?>
-                                                        </ul>
+                                                            </ul>
+                                                            <?php }?>
+                                                        </li>
                                                         <?php }?>
-                                                        <div style="clear:both;"></div>
-                                                        <script src="static/examination/knowledege/js/roottree.js"></script>
-                                                    </div>
+                                                    </ul>
+                                                    <?php }?>
                                                     <div style="clear:both;"></div>
+                                                    <script src="static/examination/knowledege/js/roottree.js"></script>
                                                 </div>
+                                                <div style="clear:both;"></div>
                                             </div>
                                         </div>
                                         <div class="test_right">
@@ -222,83 +235,26 @@
                                                         </div>
                                                         <div class="handle">
                                                             <ul>
-                                                                <li><a href="">查看解析</a></li>
-                                                                <li><a href="">收藏题目</a></li>
+                                                                <li><a href="index.php?d=examination&c=Test&m=check_answer&id=<?=$value['id']?>" target="_blank">查看解析</a></li>
+                                                                <!--<li><a href="">收藏题目</a></li>-->
                                                             </ul>
                                                             <div>
                                                                 <u>
                                                                     难度系数：
                                                                     <i><?=$value['difficulty_degreeid']?></i>
                                                                 </u>
-                                                                <u>
+                                                                <!--<u>
                                                                     浏览：
                                                                     <i>421</i>
                                                                     次
-                                                                </u>
+                                                                </u>-->
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <?php endforeach ?>
-                                            <div class="detailsBox mb">
-                                                <div class="detailsTxt detailsTxt1">
-                                                    <div class="txt">
-                                                        <div class="quesdiv">
-                                                            <div>
-                                                                <font class="reportError" sub_id="20" exam_id="954028" style="display: none;">报错</font>
-                                                                <img src="http://yitikuimage.oss-cn-qingdao.aliyuncs.com/201505/15/57247211922219632086517161721488771361419894104338954028">
-                                                            </div>
-                                                        </div>
-                                                        <div class="handle">
-                                                            <ul>
-                                                                <li><a href="">查看解析</a></li>
-                                                                <li><a href="">收藏题目</a></li>
-                                                            </ul>
-                                                            <div>
-                                                                <u>
-                                                                    难度系数：
-                                                                    <i>0.40-0.26</i>
-                                                                </u>
-                                                                <u>
-                                                                    浏览：
-                                                                    <i>421</i>
-                                                                    次
-                                                                </u>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="detailsBox mb">
-                                                <div class="detailsTxt detailsTxt1">
-                                                    <div class="txt">
-                                                        <div class="quesdiv">
-                                                            <div>
-                                                                <font class="reportError" sub_id="20" exam_id="954028" style="display: none;">报错</font>
-                                                                <img src="http://yitikuimage.oss-cn-qingdao.aliyuncs.com/201505/15/57247211922219632086517161721488771361419894104338954028">
-                                                            </div>
-                                                        </div>
-                                                        <div class="handle">
-                                                            <ul>
-                                                                <li><a href="">查看解析</a></li>
-                                                                <li><a href="">收藏题目</a></li>
-                                                            </ul>
-                                                            <div>
-                                                                <u>
-                                                                    难度系数：
-                                                                    <i>0.40-0.26</i>
-                                                                </u>
-                                                                <u>
-                                                                    浏览：
-                                                                    <i>421</i>
-                                                                    次
-                                                                </u>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </table>
                                 </div>
