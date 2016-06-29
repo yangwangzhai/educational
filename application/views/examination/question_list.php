@@ -235,19 +235,19 @@
                                                         </div>
                                                         <div class="handle">
                                                             <ul>
-                                                                <li><a href="">查看解析</a></li>
-                                                                <li><a href="">收藏题目</a></li>
+                                                                <li><a href="index.php?d=examination&c=Test&m=check_answer&id=<?=$value['id']?>" target="_blank">查看解析</a></li>
+                                                                <!--<li><a href="">收藏题目</a></li>-->
                                                             </ul>
                                                             <div>
                                                                 <u>
                                                                     难度系数：
                                                                     <i><?=$value['difficulty_degreeid']?></i>
                                                                 </u>
-                                                                <u>
+                                                                <!--<u>
                                                                     浏览：
                                                                     <i>421</i>
                                                                     次
-                                                                </u>
+                                                                </u>-->
                                                             </div>
                                                         </div>
                                                     </div>

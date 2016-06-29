@@ -252,7 +252,12 @@ class Test extends Content
         show_msg ( '添加成功！', $_SESSION ['url_forward'] );
     }
 
+    public function check_answer(){
+        $id=$this->input->get('id');
+        $data['answer']=$this->Question_model->get_column2("content,answer","fly_question","id=$id");
 
+        $this->load->view("examination/check_answer",$data);
+    }
 
 
 
